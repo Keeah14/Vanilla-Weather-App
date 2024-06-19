@@ -1,1 +1,1 @@
-alert ("hello wold");
+alert ('hello wold');
