@@ -66,6 +66,11 @@ function handleSearchSubmit(event) {
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
     axios(apiUrl).then(displayForecast);
   }
+  function getForecast(city) {
+    let apiKey = "b2a5adcct04b33178913oc335f405433";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+    axios(apiUrl).then(displayForecast);
+  }
   
   function displayForecast(response) {
     let forecastHtml = "";
@@ -94,9 +99,10 @@ function handleSearchSubmit(event) {
   
     let forecastElement = document.querySelector("#forecast");
     forecastElement.innerHTML = forecastHtml;
-  }
+  }  
   
   let searchFormElement = document.querySelector("#search-form");
   searchFormElement.addEventListener("submit", handleSearchSubmit);
   
   searchCity("Johannesburg");
+  displayForecast();
